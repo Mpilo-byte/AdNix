@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "AdNix",
+    "version": "0.1.0",
+    "description": "Open-source ad blocking and privacy protection.",
+    "background": {
+        "scripts": ["src/background.js"]
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "adnix@mpilo-byte.github.io"
+        }
+    }
+}
