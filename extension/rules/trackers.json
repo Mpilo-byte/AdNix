@@ -1,0 +1,10 @@
+[
+    { "id": 1, "priority": 1, "action": { "type": "block" }, "condition": { "requestDomains": ["google-analytics.com"] } },
+    { "id": 2, "priority": 1, "action": { "type": "block" }, "condition": { "requestDomains": ["scorecardresearch.com"] } },
+    { "id": 3, "priority": 1, "action": { "type": "block" }, "condition": { "requestDomains": ["quantserve.com"] } },
+    { "id": 4, "priority": 1, "action": { "type": "block" }, "condition": { "requestDomains": ["hotjar.com"] } },
+    { "id": 5, "priority": 1, "action": { "type": "block" }, "condition": { "requestDomains": ["mouseflow.com"] } },
+    { "id": 6, "priority": 1, "action": { "type": "block" }, "condition": { "requestDomains": ["krxd.net"] } },
+    { "id": 7, "priority": 1, "action": { "type": "block" }, "condition": { "requestDomains": ["demdex.net"] } },
+    { "id": 8, "priority": 1, "action": { "type": "block" }, "condition": { "requestDomains": ["bluekai.com"] } }
+]

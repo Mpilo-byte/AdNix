@@ -3,6 +3,13 @@
     "name": "AdNix",
     "version": "0.1.0",
     "description": "Open-source ad blocking and privacy protection.",
+    "permissions": ["declarativeNetRequest"],
+    "declarative_net_request": {
+        "rule_resources": [
+            { "id": "ads", "enabled": true, "path": "rules/ads.json" },
+            { "id": "trackers", "enabled": true, "path": "rules/trackers.json" }
+        ]
+    },
     "background": {
         "service_worker": "src/background.js"
     }
