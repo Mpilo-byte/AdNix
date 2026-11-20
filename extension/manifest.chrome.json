@@ -10,6 +10,14 @@
             { "id": "trackers", "enabled": true, "path": "rules/trackers.json" }
         ]
     },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["src/cosmetic-rules.js", "src/content.js"],
+            "run_at": "document_start",
+            "all_frames": true
+        }
+    ],
     "background": {
         "service_worker": "src/background.js"
     }

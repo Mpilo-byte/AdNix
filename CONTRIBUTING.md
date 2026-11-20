@@ -13,7 +13,7 @@ All contributions to the official repo must be submitted through GitHub Issues o
 - The project owner retains administrative control and final decision-making authority.
 - Community members do not receive direct write access to the official repo.
 - All proposed code changes are subject to review.
-- Pull requests may be approved, modified, deferred or rejected at the project owner's discretion. 
+- Pull requests may be approved, modified, deferred or rejected at the project owner's discretion.
 
 ### How to contribute?
 1. Open an issue describing your proposed improvement or bug.
@@ -27,6 +27,6 @@ All contributions to the official repo must be submitted through GitHub Issues o
 ## Our philosophy
 AdNix is community-driven, but its official codebase is maintained through a controlled review and approval process.
 
-<div align="center", style="bold">
+<div align="center">
   <b>Your web. Your rules.</b>
 </div>
