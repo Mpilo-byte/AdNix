@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>AdNix</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <header>
+        <h1>AdNix</h1>
+        <label class="switch" title="Turn AdNix on or off">
+            <input type="checkbox" id="enabled-toggle">
+            <span class="slider"></span>
+        </label>
+    </header>
+
+    <section class="site">
+        <p id="site-status"></p>
+        <button id="site-button" type="button"></button>
+    </section>
+
+    <section class="counters">
+        <div>
+            <span class="number" id="page-count">0</span>
+            <span class="label">blocked on this page</span>
+        </div>
+        <div>
+            <span class="number" id="lifetime-count">0</span>
+            <span class="label">blocked in total</span>
+        </div>
+    </section>
+
+    <script src="popup.js"></script>
+</body>
+</html>

@@ -1,5 +1,7 @@
 "use strict"
 
+const api = typeof browser !== "undefined" ? browser : chrome;
+
 const STYLE_ID = "adnix-cosmetic";
 
 function injectCosmeticStyle() {
@@ -18,4 +20,14 @@ function injectCosmeticStyle() {
     parent.appendChild(style);
 }
 
-injectCosmeticStyle();
+async function init() {
+    const { enabled = true, allowlist = [] } = await api.storage.local.get(["enabled", "allowlist"]);
+    if (!enabled) return;
+
+    const host = location.hostname;
+    if (allowlist.some((entry) => host === entry || host.endsWith("." + entry))) return;
+
+    injectCosmeticStyle();
+}
+
+init();
