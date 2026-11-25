@@ -1,7 +1,5 @@
 "use strict"
 
-const api = typeof browser !== "undefined" ? browser : chrome;
-
 const enabledToggle = document.getElementById("enabled-toggle");
 const siteStatus = document.getElementById("site-status");
 const siteButton = document.getElementById("site-button");
@@ -27,8 +25,8 @@ function getSiteHost(url) {
 }
 
 async function render() {
-    const settings = await api.storage.local.get(["enabled", "allowlist", "lifetimeBlocked"]);
-    const session = await api.storage.session.get("tabCounts");
+    const settings = await chrome.storage.local.get(["enabled", "allowlist", "lifetimeBlocked"]);
+    const session = await chrome.storage.session.get("tabCounts");
     const tabCounts = session.tabCounts || {};
 
     allowlist = settings.allowlist || [];
@@ -52,9 +50,9 @@ async function render() {
 
 async function update(message) {
     try {
-        const response = await api.runtime.sendMessage(message);
+        const response = await chrome.runtime.sendMessage(message);
         if (!response || !response.ok) throw new Error("AdNix: background request failed");
-        if (tab) await api.tabs.reload(tab.id);
+        if (tab) await chrome.tabs.reload(tab.id);
     } catch (error) {
         console.error(error);
     }
@@ -74,11 +72,11 @@ siteButton.addEventListener("click", () => {
 });
 
 async function init() {
-    const [activeTab] = await api.tabs.query({ active: true, currentWindow: true });
+    const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true });
     tab = activeTab || null;
     host = tab ? getSiteHost(tab.url) : null;
     await render();
 }
 
-api.storage.onChanged.addListener(render);
+chrome.storage.onChanged.addListener(render);
 init();
